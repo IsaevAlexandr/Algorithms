@@ -43,7 +43,7 @@ function swap(array, firstIndex, secondIndex) {
  */
 function bubbleSort(array) {
     for (var i = 0, len = array.length; i < len; i++) {
-        /* если при проходе по всему массиву не происходит изменений, значит массив отсортирован. Завершаем процесс */
+        /* if nothing to change in incomint array breck this function */
         let isSorted = true;
 
         for (var j = 0; j < len - 1; j++) {
