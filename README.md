@@ -1,5 +1,5 @@
 # Algorithms
-Hello! This is my realization of classical algorithms on Javascript
+Hello! This is my realization of classical algorithms on JavaScript
 ### Links
 | Name | reference |
 | ------ | ------ |
