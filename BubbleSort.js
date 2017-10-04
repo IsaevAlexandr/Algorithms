@@ -43,7 +43,7 @@ function swap(array, firstIndex, secondIndex) {
  */
 function bubbleSort(array) {
     for (var i = 0, len = array.length; i < len; i++) {
-        /* if nothing to change in incomint array breck this function */
+        /* if nothing to change in incomint array breack this function */
         let isSorted = true;
 
         for (var j = 0; j < len - 1; j++) {
