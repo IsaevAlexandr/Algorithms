@@ -1,30 +1,4 @@
 /**
- * Returm ineger random number between min and max range    
- * @param {*Number} minNumber 
- * @param {*Number} maxNumber
- * @return {Number} random number
- */
-function randomIntNumber(minNumber = 1, maxNumber = 100) {
-    const min = Math.ceil(minNumber);
-    const max = Math.floor(Math.random() * (Math.floor(maxNumber) - min + 1));
-    return min + max;
-}
-
-/**
- * Return a array of random numbers
- * @param {*Number} count cuantity of numbers   
- * @param {*Number} min valie of number
- * @param {*Number} max valie of number
- * @return {Array} randNumbers
- */
-function randArrayOfNumbers(count = 1000, min = 1, max = 1000, ) {
-    let randNumbers = [];
-    for (let i = 0; i < count; i++) {
-        randNumbers.push(randomIntNumber(min, max));
-    }
-    return randNumbers;
-}
-/**
  * Swap arrays elements
  * @param {*Array} array 
  * @param {*Number} firstIndex 
@@ -39,14 +13,20 @@ function swap(array, firstIndex, secondIndex) {
 /**
  * Bubble sorte algorithm. Changing incoming array           
  * @param {*Array} array
+ * @param {*Boolean} log results
  * @return {Array} 
  */
-function bubbleSort(array) {
+function bubbleSort(array, silent = true) {
+    let compareCount = 0;
+
+    /*with each next iteration, we reduce the array by 1 element */
     for (var i = 0, len = array.length; i < len; i++) {
         /* if nothing to change in incomint array breack this function */
         let isSorted = true;
 
+        /*with each iteration shift the lowest number to the left*/
         for (var j = 0; j < len - 1; j++) {
+            compareCount++;
             if (array[j] > array[j + 1]) {
                 swap(array, j, j + 1);
                 isSorted = false;
@@ -58,5 +38,30 @@ function bubbleSort(array) {
         }
     }
 
+    /* if some one know better way to show @compareCount parametr, pls let me know!*/
+    function showInfo(){
+        console.log(`/*======================================*/`);
+        console.log(`${this.name} algorithm`);
+        console.log(`Array length : ${this.arguments[0].length}`);
+        console.log(`Number of comparisons : ${compareCount}`);
+        console.log(`resuls : ${array}`);
+        console.log(`/*======================================*/`);
+    }
+    
+    if(silent){
+        showInfo.call(bubbleSort);
+    }
+
     return array;
 }
+
+/*tests*/
+let arr = [1,2,3,4,5,6,7,8,9,10]
+let arr2 = [3,7,2,1];
+let arr3 = [1,2,3,4,5,6,7,8,10,9];
+let arr4 = [-10,2,-4,4,0,155,6,-7,8,10,9];
+
+bubbleSort(arr);
+bubbleSort(arr2);
+bubbleSort(arr3);
+bubbleSort(arr4);
