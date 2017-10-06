@@ -16,7 +16,7 @@ function swap(array, firstIndex, secondIndex) {
  * @param {*Boolean} log results
  * @return {Array} 
  */
-function bubbleSort(array, silent = true) {
+function bubbleSort(array, log = true) {
     let compareCount = 0;
 
     /*with each next iteration, we reduce the array by 1 element */
@@ -48,7 +48,7 @@ function bubbleSort(array, silent = true) {
         console.log(`/*======================================*/`);
     }
     
-    if(silent){
+    if(log){
         showInfo.call(bubbleSort);
     }
 

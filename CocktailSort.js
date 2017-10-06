@@ -16,7 +16,7 @@ function swap(array, firstIndex, secondIndex) {
  * @param {*Boolean} log results
  * @return {Array} 
  */
-function cocktailSort(array, silent = true) {
+function cocktailSort(array, log = true) {
     let left = 0;
     let right = array.length - 1;
     let compareCount = 0;
@@ -80,7 +80,7 @@ function cocktailSort(array, silent = true) {
         console.log(`/*======================================*/`);
     }
     
-    if(silent){
+    if(log){
         showInfo.call(cocktailSort);
     }
     return array;
