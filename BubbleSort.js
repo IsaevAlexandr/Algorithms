@@ -17,10 +17,11 @@ function swap(array, firstIndex, secondIndex) {
  * @return {Array} 
  */
 function bubbleSort(array, log = true) {
-    let compareCount = 0;
+    let compareCount = 0,
+        len = array.length;
 
     /*with each next iteration, we reduce the array by 1 element */
-    for (var i = 0, len = array.length; i < len; i++) {
+    for (var i = 0; i < len; i++) {
         /* if nothing to change in incomint array breack this function */
         let isSorted = true;
 
