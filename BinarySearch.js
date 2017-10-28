@@ -1,5 +1,5 @@
 /**
- * Find indef of number is sorted array
+ * Find index of number is sorted array
  * @param {Array} sortedArray 
  * @param {Number} number
  * @return {Number} return index of number or -1 
