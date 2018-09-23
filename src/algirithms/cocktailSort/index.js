@@ -1,6 +1,7 @@
 import { swap } from '../../helpers';
 
-const cocktailSort = (arr, cb, immutable = true) => {
+
+export default (arr, cb, immutable = true) => {
     const array = immutable ? [...arr] : arr;
 
     const length = array.length;
